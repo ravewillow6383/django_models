@@ -9,8 +9,7 @@ class Passenger(models.Model):
 
 class Seats(models.Model):
     seatnumber = models.CharField(max_length=3)
-    passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE)
+    passenger = models.ForeignKey('Passenger', default=1, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
-
+        return self.seatnumber
